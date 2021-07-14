@@ -9,7 +9,7 @@ const { create } = require('domain');
 const { url } = require('inspector');
 const bot = new Discord.Client();
 
-const token = 'ODYzOTk4NDY1NzE3NTY3NDk4.YOvDRg.bJqqK6dcGHEjl6U457J8jgF4bbY';
+const token = '';
 const PREFIX = '/';
 const fcool = new Set();
 const m1c = new Set();
