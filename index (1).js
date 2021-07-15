@@ -52,7 +52,7 @@ bot.on('message', async message=> {
         case 'help':
             const hel = new Discord.MessageEmbed()
             .setTitle("Help page")
-            .addField('/daily', "Claim some cookies")
+//          .addField('/daily', "Claim some cookies")
             .addField('/bal', "shows ur bals")
             .addField('/stake', "Under Development")
             .addField('/inv', "Under Development")
@@ -62,17 +62,17 @@ bot.on('message', async message=> {
 
             message.channel.send(hel);
         break;
-        case 'daily':
-        if(fcool.has(message.author.id)){
-            message.reply('You can use this once every day only!');
-        }else{
-        fcbal.cookie += 5;
-        fcool.add(message.author.id);
-        setTimeout(() => {
-            fcool.delete(message.author.id)
-        }, cdsecs * 1000)
-        }
-        break;
+//        case 'daily':
+//        if(fcool.has(message.author.id)){
+//            message.reply('You can use this once every day only!');
+//        }else{
+//        fcbal.cookie += 5;
+//        fcool.add(message.author.id);
+//        setTimeout(() => {
+//            fcool.delete(message.author.id)
+//        }, cdsecs * 1000)
+//        }
+//        break;
     case 'bal':
         const db = new Discord.MessageEmbed()
         .setTitle('Your cookie balcne', message.author.id.username)
@@ -85,7 +85,7 @@ bot.on('message', async message=> {
     if(message.member.roles.cache.has('862724211126435891')){
       if(m1c.has(message.author.id)){
             message.reply('Wait 1 hour so that miner can mine some cookies :)');
-        }else{
+      }else{
         fcbal.cookie += 0.8;
         message.channel.send('You have mined some cookies, your miner produced 800 hashes. Come back in 1 hour to collect more.')
         m1c.add(message.author.id);
