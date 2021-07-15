@@ -62,17 +62,6 @@ bot.on('message', async message=> {
 
             message.channel.send(hel);
         break;
-        case 'daily':
-        if(fcool.has(message.author.id)){
-            message.reply('You can use this once every day only!');
-        }else{
-        fcbal.cookie += 5;
-        fcool.add(message.author.id);
-        setTimeout(() => {
-            fcool.delete(message.author.id)
-        }, cdsecs * 1000)
-        }
-        break;
     case 'bal':
         const db = new Discord.MessageEmbed()
         .setTitle('Your cookie balcne', message.author.id.username)
@@ -83,20 +72,20 @@ bot.on('message', async message=> {
         break;
     case 'mine-1':
     if(message.member.roles.cache.has('862724211126435891')){
-      if(m1c.has(message.author.id)){
+      elseif(fcool.has(message.author.id)){
             message.reply('Wait 1 hour so that miner can mine some cookies :)');
         }else{
         fcbal.cookie += 0.8;
         message.channel.send('You have mined some cookies, your miner produced 800 hashes. Come back in 1 hour to collect more.')
-        m1c.add(message.author.id);
+        fcool.add(message.author.id);
         setTimeout(() => {
-            m1c.delete(message.author.id)
+            fcool.delete(message.author.id)
         }, hsecs * 1000)
         }
-    }else{
-      message.reply('You cannot use this command, u do not have the miner-1')
-    }
-    break;
+      else{
+        message.reply('You cannot use this command, u do not have the miner-1')
+        }
+        break;
     }
 });
 
